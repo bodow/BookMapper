@@ -64,7 +64,7 @@ namespace ReadExcel
                 bsRooms.ResumeBinding();
 
                 dataso.Clear();
-                var q = Mappings.Where(m => m.Key.StartsWith(htl.Code));
+                var q = Mappings.Where(m => m.Key.StartsWith(htl.Code+"++"));
                 foreach (var itm in q)
                 {
                     RoomJoin rj = new RoomJoin() { HotelCode = htl.Code, RoomReference = itm.Key.Substring(6), MappedTo = itm.Value };
