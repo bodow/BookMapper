@@ -23,39 +23,30 @@ namespace ReadExcel.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("6")]
         public int TourOperatorCode {
             get {
                 return ((int)(this["TourOperatorCode"]));
             }
-            set {
-                this["TourOperatorCode"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2016")]
         public int SeasonYear {
             get {
                 return ((int)(this["SeasonYear"]));
             }
-            set {
-                this["SeasonYear"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("D:\\transfer\\akin")]
         public string MappingFileFolder {
             get {
                 return ((string)(this["MappingFileFolder"]));
-            }
-            set {
-                this["MappingFileFolder"] = value;
             }
         }
     }

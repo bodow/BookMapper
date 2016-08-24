@@ -53,7 +53,7 @@ namespace ReadExcel
             }
         }
 
-        private void SaveSettings()
+        public void SaveSettings()
         {
             Properties.Settings.Default.Save();
         }

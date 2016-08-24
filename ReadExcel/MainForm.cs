@@ -243,5 +243,13 @@ namespace ReadExcel
             }
         }
         #endregion
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (options != null)
+            {
+                options.SaveSettings();
+            }
+        }
     }
 }

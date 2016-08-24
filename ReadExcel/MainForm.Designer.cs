@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEditMapp = new System.Windows.Forms.Button();
             this.btnReadDBBook = new System.Windows.Forms.Button();
             this.btnReadMatch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEditMapp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,6 +76,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Λειτουργία";
+            // 
+            // btnEditMapp
+            // 
+            this.btnEditMapp.Location = new System.Drawing.Point(12, 222);
+            this.btnEditMapp.Name = "btnEditMapp";
+            this.btnEditMapp.Size = new System.Drawing.Size(150, 45);
+            this.btnEditMapp.TabIndex = 6;
+            this.btnEditMapp.Text = "Προβολή Mappings";
+            this.btnEditMapp.UseVisualStyleBackColor = true;
+            this.btnEditMapp.Click += new System.EventHandler(this.btnEditMapp_Click);
             // 
             // btnReadDBBook
             // 
@@ -341,16 +351,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Κωδ. Ξενοδοχείων:";
             // 
-            // btnEditMapp
-            // 
-            this.btnEditMapp.Location = new System.Drawing.Point(12, 222);
-            this.btnEditMapp.Name = "btnEditMapp";
-            this.btnEditMapp.Size = new System.Drawing.Size(150, 45);
-            this.btnEditMapp.TabIndex = 6;
-            this.btnEditMapp.Text = "Προβολή Mappings";
-            this.btnEditMapp.UseVisualStyleBackColor = true;
-            this.btnEditMapp.Click += new System.EventHandler(this.btnEditMapp_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -361,6 +361,7 @@
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Name = "MainForm";
             this.Text = "BookMapping";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
