@@ -392,7 +392,7 @@ namespace ReadExcel
                               b.RefId == refId &&
                               b.HotelCode == hotelCode &&
                               b.CheckedStatus == BookingStatus.NotConfirmed &&
-                              b.RoomCode.Substring(1,2) == roomCode.Substring(1,2) &&
+                              b.RoomCode.Substring(Math.Max(0, b.RoomCode.Length - 2)) == roomCode.Substring(Math.Max(0, roomCode.Length - 2)) &&
                               b.Meal == meal &&
                               b.Adults + b.Children == adults + children &&
                               b.Checkin.Date == checkin.Date &&
@@ -435,7 +435,7 @@ namespace ReadExcel
                               b.RefId == refId &&
                               b.HotelCode == hotelCode &&
                               b.CheckedStatus == BookingStatus.NotConfirmed &&
-                              b.RoomCode.Substring(1, 2) == roomCode.Substring(1, 2) &&
+                              b.RoomCode.Substring(Math.Max(0, b.RoomCode.Length - 2)) == roomCode.Substring(Math.Max(0, roomCode.Length - 2)) &&
                               b.Meal == meal &&
                               b.Adults + b.Children == adults + children &&
                               b.Checkin.Date == checkin.Date &&
