@@ -55,6 +55,9 @@ namespace ReadExcel
 
         public void SaveSettings()
         {
+            Properties.Settings.Default.TourOperatorCode = this.TourOperatorCode;
+            Properties.Settings.Default.SeasonYear = this.SeasonYear;
+            Properties.Settings.Default.MappingFileFolder = this.MappingFileFolder;
             Properties.Settings.Default.Save();
         }
     }

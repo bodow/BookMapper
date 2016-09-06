@@ -7,6 +7,7 @@ using Syncfusion.XlsIO;
 using System.Data;
 using ReadExcel.DataClasses;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ReadExcel
 {
@@ -217,6 +218,12 @@ namespace ReadExcel
         }
         public bool WriteExcelBookingData()
         {
+            // ver 1.3.0.0
+            // Δεν χρειάζεται αυτή η λειτουργία.
+            // Αν παρόλα αυτά την θέλετε, απλά ξε-βραχυκυκλώστε τον κώδικα
+            return true;
+
+
             logger.MessageClear();
             if (!String.IsNullOrEmpty(LocalExcelFileName) && BookingLinesRead > 0)
             {
@@ -299,6 +306,19 @@ namespace ReadExcel
 
             // save updated mappings
             SaveMappings();
+
+            // delete rejected lines
+            //var rejectedRows = bookingLinesDT.Select("HotelCode == 'IGNORE'");
+            //foreach (var row in rejectedRows)
+            //{
+            //    row.Delete();
+            //}
+            for (int i = bookingLinesDT.Rows.Count - 1; i >= 0; i--)
+            {
+                DataRow dr = bookingLinesDT.Rows[i];
+                if (dr["HotelCode"] == "IGNORE" || dr["RoomCode"] == "IGNORE")
+                    dr.Delete();
+            }
 
             return !canceledByUser;
         }
@@ -580,7 +600,8 @@ namespace ReadExcel
             {
                 using (FMappingWindow f = new FMappingWindow(row, Hotels, Rooms, maphotel))
                 {
-                    if (f.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    DialogResult result = f.ShowDialog(); 
+                    if (result == DialogResult.OK || result == DialogResult.Ignore)
                     {
                         maphotel = f.HotelCode;
                         maproom = f.RoomCode;
@@ -590,10 +611,12 @@ namespace ReadExcel
 
 
             // register the mappings!
+            //if (!String.IsNullOrEmpty(maphotel) && !maphotel.Equals("IGNORE") && !Mapping.ContainsKey(operHotelDescription))
             if (!String.IsNullOrEmpty(maphotel) && !Mapping.ContainsKey(operHotelDescription))
             {
                 Mapping.Add(operHotelDescription, maphotel);
             }
+            //if (!String.IsNullOrEmpty(maproom) && !maproom.Equals("IGNORE") && !Mapping.ContainsKey(String.Format(ROOMKEYPATTERN, maphotel, operRoomDescription)))
             if (!String.IsNullOrEmpty(maproom) && !Mapping.ContainsKey(String.Format(ROOMKEYPATTERN, maphotel, operRoomDescription)))
             {
                 Mapping.Add(String.Format(ROOMKEYPATTERN, maphotel, operRoomDescription), maproom);

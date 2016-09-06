@@ -96,5 +96,11 @@ namespace ReadExcel
             if (DialogResult != System.Windows.Forms.DialogResult.None && !LocalValidate())
                 DialogResult = System.Windows.Forms.DialogResult.None;
         }
+
+        private void btnReject_Click(object sender, EventArgs e)
+        {
+            HotelCode = RoomCode = "IGNORE";
+            DialogResult = DialogResult.Ignore;
+        }
     }
 }

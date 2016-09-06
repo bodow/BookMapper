@@ -2,13 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ReadExcel.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="TourOperatorCode" Type="System.Int32" Scope="Application">
+    <Setting Name="TourOperatorCode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">6</Value>
     </Setting>
-    <Setting Name="SeasonYear" Type="System.Int32" Scope="Application">
+    <Setting Name="SeasonYear" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2016</Value>
     </Setting>
-    <Setting Name="MappingFileFolder" Type="System.String" Scope="Application">
+    <Setting Name="MappingFileFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">D:\transfer\akin</Value>
     </Setting>
   </Settings>

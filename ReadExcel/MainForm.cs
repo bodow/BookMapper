@@ -52,6 +52,13 @@ namespace ReadExcel
         {
             DisplayCounters();
         }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (options != null)
+            {
+                options.SaveSettings();
+            }
+        }
         #endregion
 
         #region private methods
@@ -149,7 +156,7 @@ namespace ReadExcel
                             DisplayCounters();
                             if (project.WriteExcelBookingData())
                             {
-                                MessageBox.Show("Η εργασία ολοκληρώθηκε, παρακαλώ δείτε το αρχικό excel file");
+                                MessageBox.Show("Η ανάγνωση & το mapping ολοκληρώθηκε");
                             }
                             else
                             {
@@ -243,13 +250,5 @@ namespace ReadExcel
             }
         }
         #endregion
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (options != null)
-            {
-                options.SaveSettings();
-            }
-        }
     }
 }

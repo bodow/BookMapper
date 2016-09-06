@@ -44,6 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
+            this.btnReject = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsHotel)).BeginInit();
@@ -176,6 +177,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnReject);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnOk);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -207,6 +209,18 @@
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnReject
+            // 
+            this.btnReject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReject.DialogResult = System.Windows.Forms.DialogResult.Ignore;
+            this.btnReject.Location = new System.Drawing.Point(12, 18);
+            this.btnReject.Name = "btnReject";
+            this.btnReject.Size = new System.Drawing.Size(77, 31);
+            this.btnReject.TabIndex = 2;
+            this.btnReject.Text = "Reject";
+            this.btnReject.UseVisualStyleBackColor = true;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
             // FMappingWindow
             // 
@@ -250,5 +264,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource bsHotel;
         private System.Windows.Forms.BindingSource bsRoom;
+        private System.Windows.Forms.Button btnReject;
     }
 }
