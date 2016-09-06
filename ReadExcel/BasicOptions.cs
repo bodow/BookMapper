@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Windows.Forms;
 
 namespace ReadExcel
 {
@@ -40,7 +41,7 @@ namespace ReadExcel
             {
                 MappingFileFolder = Properties.Settings.Default.MappingFileFolder;
             }
-            catch { MappingFileFolder = @"D:\transfer\akin"; }
+            catch { MappingFileFolder = System.IO.Path.GetDirectoryName(Application.ExecutablePath); }
         }
         public string DefaultOperSeasPrefix 
         {
