@@ -592,6 +592,14 @@ namespace ReadExcel
             string operRoomDescription = row.Field<string>("Room").Trim();
 
             maphotel = GetHotelMapping(operHotelDescription);
+
+            // version 1.3.2.0
+            if (maphotel == "IGNORE")
+            {
+                return new Tuple<string, string>("IGNORE", "IGNORE");
+            }
+            //
+
             if (!String.IsNullOrEmpty(maphotel))
             {
                 maproom = GetRoomMapping(maphotel, operRoomDescription);

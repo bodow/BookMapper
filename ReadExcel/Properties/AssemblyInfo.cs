@@ -32,9 +32,10 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.3.1.0")]
-[assembly: AssemblyFileVersion("1.3.1.0")]
+[assembly: AssemblyVersion("1.3.2.0")]
+[assembly: AssemblyFileVersion("1.3.2.0")]
 
+//  1.3.2.0     30.03.2017      DEBUG               Διόρθωση bug με το IGNORE case
 //  1.3.1.0     06.09.2016      Improvement         Default=Initial Directory
 //  1.3.0.0     06.09.2016      Improvement         Δυνατότητα IGNORE σε Input-Lines Ελέγχου
 //  1.2.1.0     06.09.2016      Improvement         Ο έλεγχος του κωδ.Room γίνεται λαμβάνοντας υπόψη αν είναι 2 ή 3 ψηφίων κωδικός
